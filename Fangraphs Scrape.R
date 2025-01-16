@@ -43,7 +43,7 @@ selected_tables <- tables[15:46]
 combined_table <- bind_rows(lapply(selected_tables, html_table))
 
 combined_table <- combined_table[!duplicated(combined_table), ]
-
+write.csv(combined_table, file = "combined_table.csv", row.names = FALSE)
 # View the combined table
 print(combined_table)
 
